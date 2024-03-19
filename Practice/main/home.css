@@ -9,10 +9,14 @@
   font-family: "IBM Plex Sans KR", sans-serif;
   font-weight: 200;
 }
+body::-webkit-scrollbar {
+  display: none;
+}
 
 .rounded-image {
   border-radius: 20%;
   border: 3px solid rgb(11, 113, 50);
+  margin: 30px;
 }
 
 body {
@@ -28,7 +32,7 @@ body {
 }
 
 header {
-  background-image: url("imgs/color_blue.png"); /*헤더에 색갈 넣기*/
+  background-image: url("img/color_blue.png"); /*헤더에 색갈 넣기*/
   padding: 0 60px;
   font-family: "Kdam Thmor Pro", sans-serif;
   color: #30333b;
@@ -41,6 +45,36 @@ header {
   position: fixed;
   top: 0;
 }
+
+.btn-code {
+  padding: 8px 23px;
+  border-radius: 20px;
+  background-color: #527154;
+  border: solid 2px #527154;
+  color: white;
+}
+.btn-code:hover {
+  background-color: white;
+  border: solid 2px #527154;
+  color: #527154;
+  transition: 0.2s ease-out;
+}
+.bar-bg {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  bottom: 0;
+  left: 0;
+  background-color: #dfe2f7;
+}
+.bar-ing {
+  position: absolute;
+  height: 5px;
+  bottom: 0;
+  left: 0;
+  background-color: #527154;
+}
+
 .uptext {
   margin-top: 130px;
 }
@@ -144,4 +178,8 @@ section {
 .home__text p span:hover {
   color: #f0142e;
   background-color: inherit;
+}
+
+.fform {
+  color: green;
 }
