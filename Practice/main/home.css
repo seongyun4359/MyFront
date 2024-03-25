@@ -1,14 +1,12 @@
 @charset "utf-8";
 * {
-  margin-top: 200px;
   margin: 0;
   box-sizing: border-box;
-  text-decoration: none;
   color: rgb(240, 240, 229);
-
   font-family: "IBM Plex Sans KR", sans-serif;
-  font-weight: 200;
+  font-weight: 300;
 }
+
 body::-webkit-scrollbar {
   display: none;
 }
@@ -16,7 +14,9 @@ body::-webkit-scrollbar {
 .rounded-image {
   border-radius: 20%;
   border: 3px solid rgb(11, 113, 50);
-  margin: 30px;
+  margin: 20px;
+  margin-left: 13%;
+  align-items: center;
 }
 
 body {
@@ -26,8 +26,6 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   font-family: "Spoqa Han Sans Neo", "sans-serif";
 }
 
@@ -67,6 +65,7 @@ header {
   left: 0;
   background-color: #dfe2f7;
 }
+
 .bar-ing {
   position: absolute;
   height: 5px;
@@ -74,12 +73,53 @@ header {
   left: 0;
   background-color: #527154;
 }
+/*사이드 이동 바*/
 
-.uptext {
-  margin-top: 130px;
+/*사이드 바*/
+.side-bar {
+  margin-top: 90px;
+  border: 1px solid rgba(255, 255, 255, 0.866);
+  background-color: #dfe2f7;
+  border-radius: 20px;
+  margin-left: 30px;
+  margin-top: 200px;
+  position: fixed;
+  box-shadow: 5px 5px #c2c2c2;
 }
 
-/*TaeYeon introduction 글씨 크기*/
+.side-bar ul {
+  list-style-type: none;
+  text-align: center;
+  margin-right: 38px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  font-family: "Spoqa Han Sans Neo";
+}
+
+.side-bar-item a {
+  text-decoration: none;
+  color: #414040;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.bookmark i {
+  font-size: 40px;
+  color: #c2c2c2;
+  position: relative;
+  right: -120px;
+}
+
+.side-bar-item {
+  margin-bottom: 15px;
+}
+
+.uptext {
+  margin-top: 100px;
+}
+
+/*Seongyun introduction 글씨 크기*/
 .logo {
   font-size: 30px;
   letter-spacing: 0.1em;
@@ -88,11 +128,13 @@ header {
 }
 
 nav {
-  text-align: right;
+  text-align: r ight;
   width: 600px;
   transform: translateX(-35px);
 }
-
+#myinfo {
+  color: rgb(38, 38, 37);
+}
 nav ul {
   display: flex;
   justify-content: space-between;
@@ -130,7 +172,7 @@ section {
 }
 
 .home {
-  /* background-color: pink; */
+  /* background-color:; */
   margin-top: 200px;
   height: 100vh;
   display: flex;
@@ -180,6 +222,81 @@ section {
   background-color: inherit;
 }
 
-.fform {
-  color: green;
+.home__text {
+  font-family: "Kdam Thmor Pro", sans-serif;
+  font-family: "Nunito", sans-serif;
+  width: 100%;
+  /* height: 100%; */
+  /* background-color: yellow; */
+  text-align: center;
+  cursor: initial;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.home__text p:last-child {
+  margin: 0;
+}
+
+.home__text p span {
+  background-color: #3c5540;
+  padding: 0 3px;
+  font-weight: 500;
+}
+
+.home__text p span:hover {
+  color: #ddf4d8;
+  background-color: inherit;
+}
+
+.empty1 {
+  margin: 500px;
+}
+
+/*성격에 관한 부분들*/
+.mymbti {
+  text-align: center;
+  align-items: center;
+  margin-left: 5%;
+}
+
+.mycharacter_text {
+  font-size: 44px;
+}
+
+.mbti-image1 {
+  border: solid gray 2px;
+  border-radius: 5%;
+  border-style: inset;
+}
+.mbti-image2 {
+  border: solid gray 2px;
+  border-radius: 5%;
+  border-style: inset;
+}
+.empty2 {
+  margin: 500px;
+}
+
+/*footer쪽 제출폼*/
+.fform textarea {
+  color: rgb(4, 4, 4);
+}
+.fform_1 {
+  color: #000000;
+}
+
+.fform_2 {
+  color: #000000;
+}
+
+.homefooter {
+  background-color: rgb(209, 174, 129);
+  width: 100%;
+  border-top: solid#968229 3px;
+  margin-top: 50px;
+  border-radius: 5%;
 }

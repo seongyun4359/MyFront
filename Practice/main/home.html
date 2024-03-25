@@ -7,6 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="./home.css" />
+  <link rel="icon" type="image/jpg" href="img/star.png" />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap" rel="stylesheet" />
 </head> 
 <body>
@@ -25,53 +26,67 @@
   </div>
 </header>
 
-<h1 class="uptext" style="text-align: center;"><b>안녕하세요, 꿈나무 학부생 천성윤입니다.</b></h1>
+<div id="middle">
+  <div id="left">
+    <aside>
+      <!--사이드 바-->
+      <div class="side-bar">
+        <div class="bookmark"><i class="fa-solid fa-bookmark"></i></div>
+        <ul>
+          <li class="side-bar-item"><a href="#uptext">Main</a></li><br>
+          <li class="side-bar-item"><a href="#character">Character</a></li><br>
+          <li class="side-bar-item"><a href="#hobby">Hobby</a></li><br>
+          <li class="side-bar-item"><a href="#comments">Comments</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+  <div id="uptext"></div>
+<article>
+<h1  class="uptext" style="text-align: center;"><b>안녕하세요, 꿈나무 학부생 천성윤입니다.</b></h1>
+
 <section style="text-align: center;">
   <div>
-    <img class="rounded-image" alt="천성윤 자기소개 사진" src="img/myimage.jpg" width="300" height="400" />
+    <img class="rounded-image" alt="천성윤 자기소개 사진" src="img/myimage.jpg" width="300" height="380" />
   </div>
+</article>
+<span class="home__text">
+    <p>
+      안녕하세요! 저는 올해로 <span>24살</span>인 <span>천성윤</span>입니다.
+    </p>
+    <p>
+      저는 광운대학교<span>'정보융합학부'</span>에서  재학 중이에요:)
+    </p>
+    <p>
+      <span>축구를 </span>보고 하는 것과 <span>게임</span>하는 것을 좋아해요!
+    </p>
+      <p>
+          제 주변에 있는 <span>모든 이들</span>에게 감사합니다😊
+      </p>
+</span>
+<div class="empty1"></div>
 
-    <p>
-      안녕하세요! 저는 <strong>천성윤</strong>입니다.
-    </p>
-    <p>
-      저는 올해로 <strong>24살</strong>이에요.
-    </p>
-    <p>
-      저는 광운대학교<span>'정보융합학부'</span>에서  재학 중입니다.
-    </p>
-    <p>
-      <span>축구</span>보고 하는 것과 <span>게임</span>하는 것을 좋아해요!
-    </p>
-      <p>
-          제 주변에 있는 <span>모든 이들</span>에게 감사해요😊
-      </p>
-      <p>
-        <em>현재는 내가 하고 싶은 것이 무엇인지 알아가고 있습니다!!</em>
-      </p>
-      </section>
-      <br>
-      <article>
-        <p>
-          I'm not 100% sure of my exact career path, but I'm interested in UXUI,
-          front-end, and planning. <br />I'm currently in my fourth semester at
-          Kwangwoon University, majoring in Information Convergence. 
-        </p>
-        <br/>
-      </article>
-      <p><b>Birth:</b> 2001.11.12 <br /></p>
-      <p>
-        <b>Dream:</b> 복합적인 개발 지식과 데이터 분석에 대한 지식이 있고
-        UXUI디자인을 메인으로 하는 기획 PM <br />
-      </p>
-      <p><b>MBTI:</b> INFJ<br /></p>
-      <p><b>Hobby:</b> Soccer, Photo, Music, Planning <br /></p>
-
-      <br />
-      <br />
-      <br />
-      </section>
-      <section>
+      
+      <section >
+        <section class="mymbti" >
+          <div>      
+            <span id="character" class="mycharacter_text">My Character</span>     
+          <p><b>MBTI:</b> INFJ - T<br /></p>
+          <p><b>I:</b> 53%<br /></p>
+          <p><b>N:</b> 54%<br /></p>
+          <p><b>F:</b> 65%<br /></p>
+          <p><b>J:</b> 89%<br /></p>
+          <p><b>T:</b> 60%<br /></p>
+          <br>
+          <img class="mbti-image1" src="img/mymbti.png"width="350" height="260">
+          <img class="mbti-image2" alt="천성윤 MBTI" src="img/mymbti_all.png" width="500" height="260" />
+        </div>
+        <div class="empty2"></div>
+          <p><b>Hobby:</b> Soccer, Photo, Music, Planning <br /></p>
+    
+          <br />
+          <br />
+          </section>  
       
         <h2><b><li>What I learned</b></h2>
         <ol>
@@ -98,7 +113,7 @@
         ></iframe>
       </div>
     </section>
-    <footer>
+    <footer class="homefooter">
       <ul>
         <li><p>@ 오픈소스소트웨어 프로젝트_2021204093_천성윤</p></li>
         <!-- 링크걸 때 _top으로 창 새로 열기 -->
@@ -124,8 +139,8 @@
                     <textarea> 하고 싶은 말을 입력하세요.</textarea>
                   </div>
                     <div>
-                    <input type="submit" value="submit" value="전송하기"/>
-                    <input type="reset" value="초기화하기">
+                    <input type="submit" class="fform_1" value="submit" value="전송하기"/>
+                    <input type="reset" class="fform_2" value="초기화하기">
                   </div>
                 </p>
             </form>
