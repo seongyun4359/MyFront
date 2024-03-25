@@ -262,6 +262,9 @@ section {
   align-items: center;
   margin-left: 5%;
 }
+.mymbti div p b {
+  font-weight: 500;
+}
 
 .mycharacter_text {
   font-size: 44px;
@@ -278,6 +281,20 @@ section {
   border-style: inset;
 }
 .empty2 {
+  margin: 500px;
+}
+/*좋아하는 것들에 관한 부분들*/
+.myfavorites {
+  text-align: center;
+  align-items: center;
+  margin-left: 5%;
+}
+
+.myfavorites li {
+  list-style: none;
+}
+
+.empty3 {
   margin: 500px;
 }
 
@@ -299,4 +316,10 @@ section {
   border-top: solid#968229 3px;
   margin-top: 50px;
   border-radius: 5%;
+  text-decoration: none;
+  text-align: center;
+}
+
+.homefooter li {
+  list-style: none;
 }
