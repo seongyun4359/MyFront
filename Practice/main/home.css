@@ -1,4 +1,10 @@
 @charset "utf-8";
+
+@font-face {
+  font-family: "GmarketBold";
+  src: url("../src/font/GmarketSansTTFBold.ttf") format("truetype");
+}
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -19,6 +25,12 @@ body::-webkit-scrollbar {
   align-items: center;
 }
 
+.rounded-image:hover {
+  transform: scale(1.1);
+  transition: transform 1s ease;
+}
+
+
 body {
   background-color: rgb(133, 171, 128);
   color: white;
@@ -30,14 +42,16 @@ body {
 }
 
 header {
-  background-image: url("img/color_blue.png"); /*헤더에 색갈 넣기*/
+  background-image: url("img/color_blue.png");
+  /*헤더에 색갈 넣기*/
   padding: 0 60px;
   font-family: "Kdam Thmor Pro", sans-serif;
   color: #30333b;
   width: 100%;
   height: 80px;
   /* max-width: 1200px; */
-  display: flex; /*가로방향 배치 ,width만큼만 차지*/
+  display: flex;
+  /*가로방향 배치 ,width만큼만 차지*/
   justify-content: space-between;
   align-items: center;
   position: fixed;
@@ -51,12 +65,14 @@ header {
   border: solid 2px #527154;
   color: white;
 }
+
 .btn-code:hover {
   background-color: white;
   border: solid 2px #527154;
   color: #527154;
   transition: 0.2s ease-out;
 }
+
 .bar-bg {
   position: absolute;
   width: 100%;
@@ -73,18 +89,21 @@ header {
   left: 0;
   background-color: #527154;
 }
+
 /*사이드 이동 바*/
 
 /*사이드 바*/
 .side-bar {
   margin-top: 90px;
   border: 1px solid rgba(255, 255, 255, 0.866);
-  background-color: #dfe2f7;
+  background-color: #ffffff;
   border-radius: 20px;
+  width: 180px;
   margin-left: 30px;
   margin-top: 200px;
   position: fixed;
   box-shadow: 5px 5px #c2c2c2;
+  transition: top 0.5s ease-out;
 }
 
 .side-bar ul {
@@ -115,8 +134,18 @@ header {
   margin-bottom: 15px;
 }
 
+
+
 .uptext {
-  margin-top: 100px;
+  width: 1000px;
+  min-height: 90px;
+  margin-top: 80px;
+  margin-left: 15%;
+  font-size: 50px;
+  font-weight: 500;
+  font-family: "GmarketBold";
+  color: #e6e6e6;
+  line-height: 80px;
 }
 
 /*Seongyun introduction 글씨 크기*/
@@ -132,9 +161,11 @@ nav {
   width: 600px;
   transform: translateX(-35px);
 }
+
 #myinfo {
   color: rgb(38, 38, 37);
 }
+
 nav ul {
   display: flex;
   justify-content: space-between;
@@ -151,8 +182,10 @@ nav ul li a {
 
 /*마우스 올라가면 색 변하기*/
 nav ul li a:hover {
-  font-weight: 800;
-  color: #ff0000;
+  font-weight: 900;
+  color: #b8efce;
+  transition: 0.2s;
+
 }
 
 section {
@@ -262,6 +295,7 @@ section {
   align-items: center;
   margin-left: 5%;
 }
+
 .mymbti div p b {
   font-weight: 500;
 }
@@ -275,14 +309,17 @@ section {
   border-radius: 5%;
   border-style: inset;
 }
+
 .mbti-image2 {
   border: solid gray 2px;
   border-radius: 5%;
   border-style: inset;
 }
+
 .empty2 {
   margin: 500px;
 }
+
 /*좋아하는 것들에 관한 부분들*/
 .myfavorites {
   text-align: center;
@@ -298,10 +335,56 @@ section {
   margin: 500px;
 }
 
+/*룰렛*/
+
+.bingle.canvas {
+  transition: 2s;
+}
+
+.bingle.button {
+  background: #febf00;
+  color: #000;
+  margin-top: 1rem;
+  padding: .8rem 1.8rem;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: .2s;
+  cursor: pointer;
+}
+
+.bingle.button:active {
+  background: #444;
+  color: #000000;
+}
+
+.bingle.div {
+  width: 380px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.bingle.div::before {
+  content: "";
+  width: 10px;
+  height: 50px;
+  border-radius: 5px;
+  background: #000;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 22;
+}
+
 /*footer쪽 제출폼*/
 .fform textarea {
   color: rgb(4, 4, 4);
 }
+
 .fform_1 {
   color: #000000;
 }
