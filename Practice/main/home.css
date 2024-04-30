@@ -377,7 +377,12 @@ section {
   top: -20px;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 22;
+}
+
+.randombotton {
+  text-decoration: none;
+  color: #000;
+
 }
 
 /*footer쪽 제출폼*/
@@ -392,6 +397,7 @@ section {
 .fform_2 {
   color: #000000;
 }
+
 
 .homefooter {
   background-color: rgb(209, 174, 129);
