@@ -45,6 +45,8 @@ setInterval(typing, 200);
 const $c = document.querySelector("canvas");
 const ctx = $c.getContext(`2d`);
 
+// 초기 z-index 값 저장
+const initialZIndex = window.getComputedStyle($c).zIndex;
 
 const product = [
   "떡볶이", '돈가스', "마라탕", "피자", "햄버거", "치킨", '족발', "피자", "삼겹살",
@@ -63,12 +65,12 @@ const newMake = () => {
     ctx.arc(cw, ch, cw, arc * (i - 1), arc * i);
     ctx.fill();
     ctx.closePath();
+
   }
 
   ctx.fillStyle = "#fff";
   ctx.font = "18px Pretendard";
   ctx.textAlign = "center";
-
   for (let i = 0; i < product.length; i++) {
     const angle = (arc * i) + (arc / 2);
 
@@ -90,6 +92,9 @@ const newMake = () => {
 }
 
 const rotate = () => {
+  // 초기 z-index 값으로 복원
+  $c.style.zIndex = initialZIndex;
+
   $c.style.transform = `initial`;
   $c.style.transition = `initial`;
 
@@ -103,7 +108,7 @@ const rotate = () => {
     $c.style.transform = `rotate(-${rotate}deg)`;
     $c.style.transition = `2s`;
 
-    setTimeout(() => alert(`오늘의 추천 메뉴는?! ${product[ran]} 어떠신가요?`), 2000);
+    setTimeout(() => alert(`오늘의 추천 메뉴는?! ${product[ran]} 어떠신가요?`), 2500);
   }, 1);
 };
 
