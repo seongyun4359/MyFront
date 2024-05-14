@@ -5,6 +5,15 @@
   src: url("../src/font/GmarketSansTTFBold.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: 'Binggrae-Two';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+
 * {
   margin: 0;
   box-sizing: border-box;
@@ -105,9 +114,7 @@ nav {
   transform: translateX(-35px);
 }
 
-#myinfo {
-  color: rgb(38, 38, 37);
-}
+
 
 nav ul {
   display: flex;
@@ -235,12 +242,16 @@ section {
 /* 베너 구현 */
 .top {
   margin-top: 1px;
+  margin-left: 5%;
   display: flex;
   justify-content: center;
   border-bottom: solid 1px;
   border-radius: 20px;
-  background-image: url(../img/back-img.png);
+  background-color: #3c5540;
+  /*background-image: url(../img/back-img.png);
+  */
   background-size: cover;
+  border-color: gray;
 }
 
 .top1 {
@@ -248,20 +259,24 @@ section {
   height: 66.6vh;
   display: flex;
   justify-content: right;
+
 }
 
 #portfolio-img {
+
+  border-radius: 20%;
   object-fit: contain;
-  width: 60%;
-  height: auto;
+  width: 270px;
+  height: 540px;
   margin-right: 30px;
+  margin-bottom: 20px;
 
 }
 
 #portfolio-img:hover {
   transform: scale(1.16);
   transition-property: all;
-  transition: 0.3s;
+  transition: 1s;
   transition-delay: 0.1s;
 
 }
@@ -275,6 +290,29 @@ section {
   justify-content: center;
 }
 
+#portfolio-text {
+  margin-top: 50px;
+  margin-right: 50px;
+  font-family: "Poetsen One", sans-serif;
+  font-size: 35px;
+  transition-property: all;
+  transition: 0.3s;
+  transition-delay: 0.1s;
+  text-shadow: 3px 4px 5px rgba(73, 72, 72, 0.523);
+}
+
+
+#guest_book {
+  border: 2px solid green;
+  text-decoration: none;
+  color: #000000;
+  display: flex;
+}
+
+.guest_form {
+  text-decoration: none;
+  color: #000000;
+}
 
 /*footer쪽 제출폼*/
 .fform textarea {
@@ -290,7 +328,7 @@ section {
 }
 
 
-.homefooter {
+.foilofooter {
   background-color: rgb(209, 174, 129);
   width: 100%;
   border-top: solid#968229 3px;
@@ -300,6 +338,6 @@ section {
   text-align: center;
 }
 
-.homefooter li {
+.foilofooter li {
   list-style: none;
 }

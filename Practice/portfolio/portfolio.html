@@ -10,6 +10,9 @@
   <link rel="stylesheet" href="./portfolio.css" />
   <link rel="icon" type="image/jpg" href="img/star.png" />
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -29,25 +32,29 @@
   </header>
   <div class="empty1"></div>
   <section class="top">
-    <article class="top1"><img id="portfolio-img" src="../img/myimage.jpg" alt="포토폴리오 이미지"></article>
+    <article class="top1"><img id="portfolio-img" src="img/myimage.jpg" alt="포토폴리오 이미지"></article>
     <article class="top2">
-      <h1 id="main-writle">“미래의 개발 PM<br> 천성윤의 기록장입니다.”</h1>
+      <h1 id="portfolio-text">“Future Development PM, This is my record book.”</h1>
+      <div id="portfolio-context">
+
+      </div>
     </article>
   </section>
-  <div>
+  <div style="margin: 500px;">
     <h2><b>
         <li>What I learned
       </b></h2>
     <ol>
       <li>C</li>
       <li>Python</li>
-      <li>HTML CSS JavaScript</li>
+      <li>HTML CSS </li>
+      <li>JavaScript</li>
       <li>Figma</li>
       <li>Android Studio</li>
       <li>R</li>
       <li>SQLite</li>
       <li>React</li>
-      <li>JAVA</li>
+      <li>Java</li>
     </ol>
   </div>
   <br>
@@ -80,7 +87,53 @@
   </div>
 
   </section>
-  <footer id="comments" class="homefooter">
+
+  <section id="guest_book">
+    <h3>방명록</h3>
+    <form name="f">
+      <table id="t1">
+        <tr>
+          <th>작성자</th>
+          <td class="guest_form"><input type="text" name="writer" id="writer"></td>
+        </tr>
+        <tr>
+          <th>글 비밀번호</th>
+          <td class="guest_form"><input type="password" name="pwd" id="pwd"></td>
+        </tr>
+        <tr>
+          <th>내용</th>
+          <td class="guest_form"><input type="text" name="content" id="content"></td>
+        </tr>
+        <tr>
+          <th>작성</th>
+          <td class="guest_form"><input type="button" value="작성" onclick="a()"></td>
+        </tr>
+      </table>
+    </form>
+    <div id="list"></div>
+    <!-- 수정폼 -->
+    <table id="editf" style="display: none;">
+      <tr>
+        <th>작성자</th>
+        <td><input type="text" name="editwriter" id="editwriter"></td>
+      </tr>
+      <tr>
+        <th>글 비밀번호</th>
+        <td><input type="password" name="editpwd" id="editpwd"></td>
+      </tr>
+      <tr>
+        <th>내용</th>
+        <td><input type="text" name="editcontent" id="editcontent"></td>
+      </tr>
+      <tr>
+        <th>수정완료</th>
+        <td><input type="button" value="수정완료" id="editbtn" onclick="edit()"> <input type="button" value="취소"
+            onclick="cancel()"></td>
+      </tr>
+    </table>
+  </section>
+
+  <footer id="comments" class="foilofooter">
     <ul>
       <li>
         <p>@ OpenSourceSoftware 2024 Final Project 2021204093 Cheon Seong Yun</p>
@@ -118,7 +171,7 @@
       </li>
     </ul>
   </footer>
-  <script src="home.js"></script>
+  <script src="portfolio.js"></script>
 </body>
 
 </html>

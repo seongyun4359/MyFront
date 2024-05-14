@@ -121,7 +121,7 @@ newMake();
     box.style.backgroundColor = "hotpink";
   });
 
-  box. addEventListener("mouseleave", ()=>{
+    box. addEventListener("mouseleave", ()=>{
     box.style.backgroundColor = "aqua";
   });
 */
