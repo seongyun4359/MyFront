@@ -29,7 +29,7 @@ body::-webkit-scrollbar {
 
 
 body {
-  background-color: rgb(133, 171, 128);
+  background-color: rgb(107, 140, 225);
   color: white;
   font-weight: 200;
   width: 100%;
@@ -66,7 +66,7 @@ header {
 .btn-code:hover {
   background-color: white;
   border: solid 2px #527154;
-  color: #527154;
+  color: rgb(52, 90, 187);
   transition: 0.2s ease-out;
 }
 
@@ -84,7 +84,7 @@ header {
   height: 5px;
   bottom: 0;
   left: 0;
-  background-color: #527154;
+  background-color: rgb(70, 122, 255);
 }
 
 
@@ -133,7 +133,7 @@ nav ul li a {
 /*마우스 올라가면 색 변하기*/
 nav ul li a:hover {
   font-weight: 1000;
-  color: #a1e971;
+  color: rgb(0, 149, 255);
   transition: 0.2s;
 
 }
@@ -225,7 +225,7 @@ section {
 }
 
 .home__text p span {
-  background-color: #3c5540;
+  background-color: rgb(41, 75, 160);
   padding: 0 3px;
   font-weight: 500;
 }
@@ -247,11 +247,11 @@ section {
   justify-content: center;
   border-bottom: solid 1px;
   border-radius: 20px;
-  background-color: #3c5540;
+  background-color: rgb(39, 73, 158);
   /*background-image: url(../img/back-img.png);
   */
   background-size: cover;
-  border-color: gray;
+  border-color: rgb(30, 56, 121);
 }
 
 .top1 {
@@ -303,7 +303,7 @@ section {
 
 
 #guest_book {
-  border: 2px solid green;
+  border: 2px solid rgb(72, 71, 139);
   text-decoration: none;
   color: #000000;
   display: flex;
@@ -329,9 +329,9 @@ section {
 
 
 .foilofooter {
-  background-color: rgb(209, 174, 129);
+  background-color: rgb(231, 146, 109);
   width: 100%;
-  border-top: solid#968229 3px;
+  border-top: solid#c7ac36 1px;
   margin-top: 50px;
   border-radius: 5%;
   text-decoration: none;
