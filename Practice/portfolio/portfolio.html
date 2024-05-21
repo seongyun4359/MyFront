@@ -2,16 +2,14 @@
 <html lang="ko">
 
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Cheon Seong Yun Intro</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="./portfolio.css" />
-  <link rel="icon" type="image/jpg" href="img/star.png" />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="./portfolio.css">
+  <link rel="icon" type="image/jpg" href="img/star.png">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet">
 </head>
 
@@ -22,8 +20,8 @@
       <ul>
         <li><a href="../main/home.html">Home🏠</a></li>
         <li><a href="./portfolio.html">Portfolio📖</a></li>
-        <li><a href="https://github.com/seongyun4359" target="blank">GitHub💻</a></li>
-        <li><a href="https://lucharomantico.tistory.com/" target="blank">Blog🖼️</a></li>
+        <li><a href="https://github.com/seongyun4359" target="_blank">GitHub💻</a></li>
+        <li><a href="https://lucharomantico.tistory.com/" target="_blank">Blog🖼️</a></li>
       </ul>
     </nav>
     <div class="bar-bg">
@@ -35,19 +33,16 @@
     <article class="top1"><img id="portfolio-img" src="img/myimage.jpg" alt="포토폴리오 이미지"></article>
     <article class="top2">
       <h1 id="portfolio-text">“Future Development PM, This is my record book.”</h1>
-      <div id="portfolio-context">
-
-      </div>
+      <div id="portfolio-context"></div>
     </article>
   </section>
-  <div style="margin: 500px;">
-    <h2><b>
-        <li>What I learned
-      </b></h2>
+  <div class="empty2"></div>
+  <div class="section section-learned">
+    <h2><b>What I learned</b></h2>
     <ol>
       <li>C</li>
       <li>Python</li>
-      <li>HTML CSS </li>
+      <li>HTML CSS</li>
       <li>JavaScript</li>
       <li>Figma</li>
       <li>Android Studio</li>
@@ -57,51 +52,35 @@
       <li>Java</li>
     </ol>
   </div>
-  <br>
-  <div>
-    </li>
-
-
-    <h2><b>
-        <li>My Activities
-      </b></h2>
+  <div class="empty2"></div>
+  <div class="section section-activities">
+    <h2><b>My Activities</b></h2>
     <ol>
-      <li>
-        빅데이터 활용 미래 사회문제 해결 아이디어
-        해커톤(공모전) - CHIC아이디어톤 </li>
+      <li>빅데이터 활용 미래 사회문제 해결 아이디어 해커톤(공모전) - CHIC아이디어톤</li>
       <li>웅진씽크빅 IT기획캠프 수료(UX 기획)</li>
       <li>2024 HCI KOREA 학회 방문</li>
       <li>소원 소프트웨어 교육 봉사 활동</li>
-      <li>
-        디랩 프로그래밍 학원 튜터 (2023.07~) - 앱인벤터, 로블록스 스튜디오,
-        파이썬 교육
-      </li>
+      <li>디랩 프로그래밍 학원 튜터 (2023.07~) - 앱인벤터, 로블록스 스튜디오, 파이썬 교육</li>
       <li>사회문제 해결 해커톤 - 생성형 AI 맞춤형 병원 안내 서비스</li>
-      <li>
-        2024 미래도서관 정책 아이디어 해커톤 대회 (데이터분석 스터디) -
-        시니어를 위한 폐교활용 도서관
-      </li>
+      <li>2024 미래도서관 정책 아이디어 해커톤 대회 (데이터분석 스터디) - 시니어를 위한 폐교활용 도서관</li>
       <li>광운대학교 정보융합학부 전공 동아리 CHIC 임원진 (2023.7~)</li>
     </ol>
-    </li>
   </div>
-
-  </section>
-
+  <div class="empty2"></div>
   <section id="guest_book">
     <h3>방명록</h3>
     <form name="f">
       <table id="t1">
         <tr>
-          <th>작성자</th>
+          <th><label for="writer">작성자</label></th>
           <td class="guest_form"><input type="text" name="writer" id="writer"></td>
         </tr>
         <tr>
-          <th>글 비밀번호</th>
+          <th><label for="pwd">글 비밀번호</label></th>
           <td class="guest_form"><input type="password" name="pwd" id="pwd"></td>
         </tr>
         <tr>
-          <th>내용</th>
+          <th><label for="content">내용</label></th>
           <td class="guest_form"><input type="text" name="content" id="content"></td>
         </tr>
         <tr>
@@ -111,24 +90,25 @@
       </table>
     </form>
     <div id="list"></div>
-    <!-- 수정폼 -->
     <table id="editf" style="display: none;">
       <tr>
-        <th>작성자</th>
+        <th><label for="editwriter">작성자</label></th>
         <td><input type="text" name="editwriter" id="editwriter"></td>
       </tr>
       <tr>
-        <th>글 비밀번호</th>
+        <th><label for="editpwd">글 비밀번호</label></th>
         <td><input type="password" name="editpwd" id="editpwd"></td>
       </tr>
       <tr>
-        <th>내용</th>
+        <th><label for="editcontent">내용</label></th>
         <td><input type="text" name="editcontent" id="editcontent"></td>
       </tr>
       <tr>
         <th>수정완료</th>
-        <td><input type="button" value="수정완료" id="editbtn" onclick="edit()"> <input type="button" value="취소"
-            onclick="cancel()"></td>
+        <td>
+          <input type="button" value="수정완료" id="editbtn" onclick="edit()">
+          <input type="button" value="취소" onclick="cancel()">
+        </td>
       </tr>
     </table>
   </section>
@@ -138,35 +118,32 @@
       <li>
         <p>@ OpenSourceSoftware 2024 Final Project 2021204093 Cheon Seong Yun</p>
       </li>
-      <!-- 링크걸 때 _top으로 창 새로 열기 -->
-      <li> <!-- 연락처 의미 표기 adress 사용 -->
-        <a href="mailto:Mail : 1112csy@naver.com" target="_top">
-          <adress>Mail : 1112csy@naver.com</adress>
+      <li>
+        <a href="mailto:1112csy@naver.com" target="_top">
+          <address>Mail : 1112csy@naver.com</address>
         </a>
       </li>
       <li>
         <a href="https://www.instagram.com/lucha__01/" target="_top">
-          <adress>instagram : lucha__01</adress>
+          <address>instagram : lucha__01</address>
         </a>
       </li>
     </ul>
-    <!-- form 필수 -->
-    </br>
     <ul>
       <li>
-        <form class="fform" action="____" method="post"> <!--페이지 평가 제출 받는 곳 주소 적어넣기-->
+        <form class="fform" action="____" method="post">
           <p>Estimate page
-            <input type="radio" name="estimate" value="Good" checked="checked" />Good
-            <input type="radio" name="estimate" value="Soso" /> Soso
-            <input type="radio" name="estimate" value="Bad" /> Bad
+            <input type="radio" name="estimate" value="Good" checked="checked">Good
+            <input type="radio" name="estimate" value="Soso"> Soso
+            <input type="radio" name="estimate" value="Bad"> Bad
+          </p>
           <div>
-            <textarea> 하고 싶은 말을 입력하세요.</textarea>
+            <textarea name="comments" placeholder="하고 싶은 말을 입력하세요."></textarea>
           </div>
           <div>
-            <input type="submit" class="fform_1" value="submit" value="전송하기" />
+            <input type="submit" class="fform_1" value="submit">
             <input type="reset" class="fform_2" value="초기화하기">
           </div>
-          </p>
         </form>
       </li>
     </ul>

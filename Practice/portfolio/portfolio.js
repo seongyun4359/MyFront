@@ -1,6 +1,7 @@
 // 스크롤바
 let scrollTop = 0;
 let bar = document.getElementsByClassName("bar-ing")[0];
+let header = document.querySelector("header");
 
 window.addEventListener(
   "scroll",
@@ -10,23 +11,16 @@ window.addEventListener(
       (scrollTop / (document.body.scrollHeight - window.outerHeight)) * 100
     );
     bar.style.width = per + "%";
+
+    // 헤더 배경 변경
+    if (scrollTop > 50) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
   },
   false
 );
-
-
-
-/*
-  const box = document.querySelector("#box");
-
-  box. addEventListener("mouseenter", ()=>{
-    box.style.backgroundColor = "hotpink";
-  });
-
-  box. addEventListener("mouseleave", ()=>{
-    box.style.backgroundColor = "aqua";
-  });
-*/
 
 let cnt = 1;
 function a() {

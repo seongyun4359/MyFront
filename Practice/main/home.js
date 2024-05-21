@@ -14,11 +14,6 @@ window.addEventListener(
   false
 );
 
-// 맨 위로 이동 버튼
-let moveToTop = function () {
-  document.body.scrollIntoView({ behavior: "smooth" });
-};
-
 // 타이핑 효과
 const $txt = document.querySelector(".uptext");
 const content = "안녕하세요 :)  개발 PM 꿈나무 천성윤입니다.";

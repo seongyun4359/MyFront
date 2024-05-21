@@ -1,10 +1,12 @@
 @charset "utf-8";
 
+/* GmarketBold 폰트 설정 */
 @font-face {
   font-family: "GmarketBold";
   src: url("../src/font/GmarketSansTTFBold.ttf") format("truetype");
 }
 
+/* Binggrae-Two 폰트 설정 */
 @font-face {
   font-family: 'Binggrae-Two';
   src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Binggrae-Bold.woff') format('woff');
@@ -12,8 +14,10 @@
   font-style: normal;
 }
 
+/* Google Fonts에서 Poetsen One 폰트 불러오기 */
 @import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
 
+/* 기본 스타일 초기화 및 공통 스타일 설정 */
 * {
   margin: 0;
   box-sizing: border-box;
@@ -22,12 +26,12 @@
   font-weight: 300;
 }
 
+/* 스크롤바 숨기기 */
 body::-webkit-scrollbar {
   display: none;
 }
 
-
-
+/* 바디 스타일 설정 */
 body {
   background-color: rgb(107, 140, 225);
   color: white;
@@ -38,23 +42,29 @@ body {
   font-family: "Spoqa Han Sans Neo", "sans-serif";
 }
 
+/* 헤더 스타일 설정 */
 header {
   background-image: url("img/color_blue.png");
-  /*헤더에 색갈 넣기*/
   padding: 0 60px;
   font-family: "Kdam Thmor Pro", sans-serif;
   color: #30333b;
   width: 100%;
   height: 80px;
-  /* max-width: 1200px; */
   display: flex;
-  /*가로방향 배치 ,width만큼만 차지*/
   justify-content: space-between;
   align-items: center;
   position: fixed;
   top: 0;
+  z-index: 1000;
+  /* z-index 값을 높게 설정 */
+  transition: background-color 0.3s;
 }
 
+header.scrolled {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* 버튼 스타일 설정 */
 .btn-code {
   padding: 8px 23px;
   border-radius: 20px;
@@ -63,6 +73,7 @@ header {
   color: white;
 }
 
+/* 버튼 호버 스타일 설정 */
 .btn-code:hover {
   background-color: white;
   border: solid 2px #527154;
@@ -70,6 +81,7 @@ header {
   transition: 0.2s ease-out;
 }
 
+/* 바 배경 스타일 설정 */
 .bar-bg {
   position: absolute;
   width: 100%;
@@ -79,6 +91,7 @@ header {
   background-color: #dfe2f7;
 }
 
+/* 바 진행 스타일 설정 */
 .bar-ing {
   position: absolute;
   height: 5px;
@@ -87,7 +100,7 @@ header {
   background-color: rgb(70, 122, 255);
 }
 
-
+/* 상단 텍스트 스타일 설정 */
 .uptext {
   width: 1000px;
   min-height: 90px;
@@ -100,7 +113,7 @@ header {
   line-height: 80px;
 }
 
-/*Seongyun introduction 글씨 크기*/
+/* 로고 스타일 설정 */
 .logo {
   font-size: 30px;
   letter-spacing: 0.1em;
@@ -108,13 +121,12 @@ header {
   color: #000000;
 }
 
+/* 네비게이션 스타일 설정 */
 nav {
-  text-align: r ight;
+  text-align: right;
   width: 600px;
   transform: translateX(-35px);
 }
-
-
 
 nav ul {
   display: flex;
@@ -124,29 +136,28 @@ nav ul {
   letter-spacing: 0.1em;
 }
 
+/* 네비게이션 링크 스타일 설정 */
 nav ul li a {
   text-decoration: none;
   color: #000000;
   padding: 0 5px;
 }
 
-/*마우스 올라가면 색 변하기*/
+/* 네비게이션 링크 호버 스타일 설정 */
 nav ul li a:hover {
   font-weight: 1000;
   color: rgb(0, 149, 255);
   transition: 0.2s;
-
 }
 
+/* 섹션 스타일 설정 */
 section {
   width: 100%;
   max-width: 1300px;
 }
 
-/* home */
-
+/* 홈 텍스트 스타일 설정 */
 .home__text.eng {
-  /* position: relative; */
   padding-bottom: 5%;
 }
 
@@ -154,8 +165,8 @@ section {
   padding-bottom: 4%;
 }
 
+/* 홈 섹션 스타일 설정 */
 .home {
-  /* background-color:; */
   margin-top: 200px;
   height: 100vh;
   display: flex;
@@ -163,6 +174,7 @@ section {
   align-items: center;
 }
 
+/* 홈 이미지 스타일 설정 */
 .home__picture {
   width: 388px;
   height: 488px;
@@ -170,12 +182,10 @@ section {
   margin: 0 30px;
 }
 
+/* 홈 텍스트 스타일 설정 */
 .home__text {
   font-family: "Kdam Thmor Pro", sans-serif;
-  font-family: "Nunito", sans-serif;
   width: 100%;
-  /* height: 100%; */
-  /* background-color: yellow; */
   text-align: center;
   cursor: initial;
   display: flex;
@@ -205,41 +215,17 @@ section {
   background-color: inherit;
 }
 
-.home__text {
-  font-family: "Kdam Thmor Pro", sans-serif;
-  font-family: "Nunito", sans-serif;
-  width: 100%;
-  /* height: 100%; */
-  /* background-color: yellow; */
-  text-align: center;
-  cursor: initial;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 100px;
-}
-
-.home__text p:last-child {
-  margin: 0;
-}
-
-.home__text p span {
-  background-color: rgb(41, 75, 160);
-  padding: 0 3px;
-  font-weight: 500;
-}
-
-.home__text p span:hover {
-  color: #ddf4d8;
-  background-color: inherit;
-}
-
+/* 빈 공간 스타일 설정 */
 .empty1 {
   margin: 50px;
 }
 
-/* 베너 구현 */
+/* 빈 공간 스타일 설정 */
+.empty2 {
+  margin: 150px;
+}
+
+/* 상단 스타일 설정 */
 .top {
   margin-top: 1px;
   margin-left: 5%;
@@ -248,8 +234,6 @@ section {
   border-bottom: solid 1px;
   border-radius: 20px;
   background-color: rgb(39, 73, 158);
-  /*background-image: url(../img/back-img.png);
-  */
   background-size: cover;
   border-color: rgb(30, 56, 121);
 }
@@ -259,28 +243,26 @@ section {
   height: 66.6vh;
   display: flex;
   justify-content: right;
-
 }
 
+/* 포트폴리오 이미지 스타일 설정 */
 #portfolio-img {
-
   border-radius: 20%;
   object-fit: contain;
   width: 270px;
   height: 540px;
   margin-right: 30px;
   margin-bottom: 20px;
-
+  overflow: hidden;
+  transition: transform 0.3s;
 }
 
+/* 포트폴리오 이미지 호버 스타일 설정 */
 #portfolio-img:hover {
   transform: scale(1.16);
-  transition-property: all;
-  transition: 1s;
-  transition-delay: 0.1s;
-
 }
 
+/* 상단 텍스트 스타일 설정 */
 .top2 {
   width: 100%;
   height: 60%;
@@ -290,54 +272,144 @@ section {
   justify-content: center;
 }
 
+/* 포트폴리오 텍스트 스타일 설정 */
 #portfolio-text {
   margin-top: 50px;
   margin-right: 50px;
   font-family: "Poetsen One", sans-serif;
   font-size: 35px;
-  transition-property: all;
-  transition: 0.3s;
-  transition-delay: 0.1s;
+  transition: all 0.3s;
   text-shadow: 3px 4px 5px rgba(73, 72, 72, 0.523);
 }
 
+/* 섹션 스타일 설정 */
+.section {
+  margin: 50px auto;
+  padding: 20px;
+  max-width: 800px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+  color: #000000;
+}
 
+.section h2 {
+  font-size: 24px;
+  color: #000000;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+/* 섹션 헤딩 아래의 선 스타일 설정 */
+.section h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 2px;
+  background-color: #007BFF;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* 리스트 스타일 설정 */
+.section ol {
+  list-style: none;
+  padding-left: 0;
+}
+
+.section ol li {
+  font-size: 18px;
+  color: #000000;
+  margin: 10px 0;
+  position: relative;
+  padding-left: 25px;
+}
+
+/* 리스트 아이템 앞의 점 스타일 설정 */
+.section ol li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #007BFF;
+  font-size: 24px;
+  line-height: 18px;
+}
+
+/* 학습 섹션 배경색 설정 */
+.section-learned {
+  background-color: #e7f3ff;
+}
+
+/* 활동 섹션 배경색 설정 */
+.section-activities {
+  background-color: #eaf7ea;
+}
+
+/* 방명록 스타일 설정 */
 #guest_book {
   border: 2px solid rgb(72, 71, 139);
+  background-color: #6e6e6e;
   text-decoration: none;
   color: #000000;
   display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .guest_form {
   text-decoration: none;
+  color: #000000 !important;
+}
+
+#guest_book th,
+#guest_book td,
+#guest_book input {
   color: #000000;
 }
 
-/*footer쪽 제출폼*/
+/* 방명록 폼 텍스트 영역 색상 설정 */
 .fform textarea {
   color: rgb(4, 4, 4);
 }
 
+/* 방명록 폼 제출 버튼 색상 설정 */
 .fform_1 {
   color: #000000;
 }
 
+/* 방명록 폼 초기화 버튼 색상 설정 */
 .fform_2 {
   color: #000000;
 }
 
-
+/* 푸터 스타일 설정 */
 .foilofooter {
   background-color: rgb(231, 146, 109);
   width: 100%;
-  border-top: solid#c7ac36 1px;
+  border-top: solid #c7ac36 1px;
   margin-top: 50px;
   border-radius: 5%;
   text-decoration: none;
   text-align: center;
+  padding: 20px;
 }
 
 .foilofooter li {
   list-style: none;
+}
+
+.foilofooter a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.foilofooter a:hover {
+  color: #ffffff;
+  transition: color 0.3s;
 }
