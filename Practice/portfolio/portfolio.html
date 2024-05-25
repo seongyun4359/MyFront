@@ -30,41 +30,30 @@
   </header>
   <div class="empty1"></div>
   <section class="top">
-    <article class="top1"><img id="portfolio-img" src="img/myimage.jpg" alt="포토폴리오 이미지"></article>
     <article class="top2">
-      <h1 id="portfolio-text">“Future Development PM, This is my record book.”</h1>
+      <h1 id="portfolio-text">“Future Development PM, <br>This is my record book.”</h1>
       <div id="portfolio-context"></div>
     </article>
   </section>
   <div class="empty2"></div>
-  <div class="section section-learned">
-    <h2><b>What I learned</b></h2>
-    <ol>
-      <li>C</li>
-      <li>Python</li>
-      <li>HTML CSS</li>
-      <li>JavaScript</li>
-      <li>Figma</li>
-      <li>Android Studio</li>
-      <li>R</li>
-      <li>SQLite</li>
-      <li>React</li>
-      <li>Java</li>
-    </ol>
-  </div>
-  <div class="empty2"></div>
-  <div class="section section-activities">
-    <h2><b>My Activities</b></h2>
-    <ol>
-      <li>빅데이터 활용 미래 사회문제 해결 아이디어 해커톤(공모전) - CHIC아이디어톤</li>
-      <li>웅진씽크빅 IT기획캠프 수료(UX 기획)</li>
-      <li>2024 HCI KOREA 학회 방문</li>
-      <li>소원 소프트웨어 교육 봉사 활동</li>
-      <li>디랩 프로그래밍 학원 튜터 (2023.07~) - 앱인벤터, 로블록스 스튜디오, 파이썬 교육</li>
-      <li>사회문제 해결 해커톤 - 생성형 AI 맞춤형 병원 안내 서비스</li>
-      <li>2024 미래도서관 정책 아이디어 해커톤 대회 (데이터분석 스터디) - 시니어를 위한 폐교활용 도서관</li>
-      <li>광운대학교 정보융합학부 전공 동아리 CHIC 임원진 (2023.7~)</li>
-    </ol>
+  <div class="content">
+    <div class="section section-activities">
+      <h2><b>My Activities</b></h2>
+      <ol id="activity-list">
+        <li onclick="showDetails('activity1')">웅진씽크빅 AI 문해력교육서비스 기획캠프 수료(UX 기획)</li>
+        <li onclick="showDetails('activity2')">2024 HCI KOREA 학회 방문</li>
+        <li onclick="showDetails('activity3')">빅데이터 활용 미래 사회문제 해결 아이디어 해커톤 참가: 고령자를 위한 자습어플 </li>
+        <li onclick="showDetails('activity4')">사회문제 해결 해커톤 참가: 생성형 AI 맞춤형 병원 안내 서비스</li>
+        <li onclick="showDetails('activity5')">2024 미래도서관 정책 아이디어 해커톤 대회 참가: 시니어를 위한 폐교활용 도서관</li>
+        <li onclick="showDetails('activity6')">광운대학교 정보융합학부 전공 동아리 CHIC 임원진 (2023.7~)</li>
+        <li onclick="showDetails('activity7')">디랩 프로그래밍 학원 튜터 - 앱인벤터, 로블록스 스튜디오, 파이썬 교육(2023.07~)</li>
+        <li onclick="showDetails('activity8')">소원 소프트웨어 서포터즈 교육 봉사 활동 (2024.3~)</li>
+        <li onclick="showDetails('activity9')">마이캡스톤: 역류성식도염 예방 어플 - UXUI 및 앱 구현 담당 (2024.3~)</li>
+      </ol>
+    </div>
+    <div class="details" id="details">
+      <!-- 클릭된 항목의 세부 사항이 여기에 표시됩니다. -->
+    </div>
   </div>
   <div class="empty2"></div>
   <section id="guest_book">
@@ -84,7 +73,7 @@
           <td class="guest_form"><input type="text" name="content" id="content"></td>
         </tr>
         <tr>
-          <th>작성</th>
+          <th></th>
           <td class="guest_form"><input type="button" value="작성" onclick="a()"></td>
         </tr>
       </table>
@@ -127,24 +116,6 @@
         <a href="https://www.instagram.com/lucha__01/" target="_top">
           <address>instagram : lucha__01</address>
         </a>
-      </li>
-    </ul>
-    <ul>
-      <li>
-        <form class="fform" action="____" method="post">
-          <p>Estimate page
-            <input type="radio" name="estimate" value="Good" checked="checked">Good
-            <input type="radio" name="estimate" value="Soso"> Soso
-            <input type="radio" name="estimate" value="Bad"> Bad
-          </p>
-          <div>
-            <textarea name="comments" placeholder="하고 싶은 말을 입력하세요."></textarea>
-          </div>
-          <div>
-            <input type="submit" class="fform_1" value="submit">
-            <input type="reset" class="fform_2" value="초기화하기">
-          </div>
-        </form>
       </li>
     </ul>
   </footer>
