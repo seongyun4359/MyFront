@@ -81,6 +81,8 @@ function showDetails(activityId) {
   `;
 }
 
+
+
 // 방명록 기능 구현
 let cnt = 1;
 function a() {
