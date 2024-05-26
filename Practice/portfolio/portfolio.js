@@ -76,12 +76,10 @@ function showDetails(activityId) {
   const detailsDiv = document.getElementById('details');
   detailsDiv.innerHTML = `
     <h3>${detail.description}</h3>
-    <img src="${detail.image}" alt="${detail.description}" style="width:100%;height:auto;border-radius:10px;">
+    <img src="${detail.image}" alt="${detail.description}" class="detail-image">
     <p><a href="${detail.link}" target="_blank">더 알아보기</a></p>
   `;
 }
-
-
 
 // 방명록 기능 구현
 let cnt = 1;
@@ -158,3 +156,43 @@ function del(cnt) {
     alert("글 비밀번호 불일치. 삭제취소");
   }
 }
+
+function addEntry() {
+  const writer = document.getElementById("writer").value;
+  const content = document.getElementById("content").value;
+
+  const formData = new FormData();
+  formData.append('writer', writer);
+  formData.append('content', content);
+
+  fetch('/add_entry', {
+    method: 'POST',
+    body: formData
+  }).then(response => {
+    if (response.ok) {
+      location.reload();
+    } else {
+      alert('Failed to add entry');
+    }
+  });
+}
+
+/*
+function deleteEntry(writer, content, time) {
+  const formData = new FormData();
+  formData.append('writer', writer);
+  formData.append('content', content);
+  formData.append('time', time);
+
+  fetch('/delete_entry', {
+    method: 'POST',
+    body: formData
+  }).then(response => {
+    if (response.ok) {
+      location.reload();
+    } else {
+      alert('Failed to delete entry');
+    }
+  });
+}
+*/

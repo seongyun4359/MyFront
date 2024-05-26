@@ -248,22 +248,25 @@ section {
 /* 상단 텍스트 스타일 설정 */
 .top2 {
   width: 100%;
+  /* 수정: 100%로 설정 */
   height: 60%;
   box-sizing: border-box;
-  display: grid;
-  align-content: center;
+  display: flex;
+  /* 수정: grid에서 flex로 변경 */
+  align-items: center;
+  /* 세로 가운데 정렬 */
   justify-content: center;
+  /* 가로 가운데 정렬 */
 }
 
 /* 포트폴리오 텍스트 스타일 설정 */
 #portfolio-text {
-  margin-top: 150px;
-  margin-right: 50px;
   line-height: 1.5;
   font-family: "Poetsen One", sans-serif;
   font-size: 50px;
   transition: all 0.3s;
   text-shadow: 3px 4px 5px rgba(73, 72, 72, 0.523);
+  margin-top: 100px;
 }
 
 /* 섹션 스타일 설정 */
@@ -341,7 +344,8 @@ section {
 .section-activities {
   text-decoration: none;
   color: #000000;
-  background-color: #eaf7ea;
+  background-color: #ffffff;
+  height: 61vh;
 }
 
 /* 세부 사항 영역 스타일 설정 */
@@ -350,17 +354,51 @@ section {
   justify-content: space-between;
 }
 
+.section b {
+  color: #000;
+}
+
 /* 세부 사항 영역 스타일 설정 */
 .details {
+  margin-top: 3.5%;
   flex: 1;
   padding: 20px;
   background-color: #ffffff;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-left: 20px;
-  color: #000000;
-  /* 글씨를 검정색으로 설정 */
+  align-items: center;
+  display: flex;
+  /* 추가 */
+  flex-direction: column;
+  /* 추가 */
+  justify-content: center;
+  /* 추가 */
 }
+
+.details h3,
+a {
+  text-align: center;
+  color: #000;
+}
+
+/* 세부 사항 이미지 스타일 설정 */
+.detail-image {
+  max-width: 50vw;
+  max-height: 45vh;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  margin: 10px 0;
+  /* 추가하여 위아래 간격 조정 */
+}
+
+.details {
+  width: 60vw;
+  height: 61vh;
+}
+
+
 
 /* 방명록 스타일 설정 */
 #guest_book {
@@ -416,4 +454,9 @@ section {
 
 .foilofooter li {
   list-style: none;
+}
+
+.foilofooter li address {
+  list-style: none;
+  text-decoration: none;
 }
