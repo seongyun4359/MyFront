@@ -21,6 +21,7 @@
 /* 기본 스타일 초기화 및 공통 스타일 설정 */
 * {
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
   color: rgb(240, 240, 229);
   font-family: "IBM Plex Sans KR", sans-serif;

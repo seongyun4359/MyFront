@@ -8,6 +8,10 @@ from datetime import datetime
 
 app = FastAPI()
 
+origins = [
+    # http://127.0.0.1:5500/
+]
+
 # Static files and templates configuration
 app.mount("/static", StaticFiles(directory="portfolio"), name="static")
 templates = Jinja2Templates(directory="portfolio")

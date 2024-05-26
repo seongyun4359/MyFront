@@ -70,6 +70,9 @@ const details = {
     description: '마이캡스톤: 역류성식도염 예방 어플 - UXUI 및 앱 구현 담당 (2024.3~)'
   },
 };
+//const host = "http://127.0.0.1:5500 ";
+//axisos.get('${host}/gbook').then( )
+//const a = `hello`
 
 function showDetails(activityId) {
   const detail = details[activityId];
