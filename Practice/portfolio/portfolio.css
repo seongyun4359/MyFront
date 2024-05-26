@@ -415,6 +415,11 @@ a {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+#guest_book h2 {
+  margin-left: 75px;
+}
+
+
 .guest_form {
   text-decoration: none;
   color: #000000 !important;

@@ -70,9 +70,6 @@ const details = {
     description: '마이캡스톤: 역류성식도염 예방 어플 - UXUI 및 앱 구현 담당 (2024.3~)'
   },
 };
-//const host = "http://127.0.0.1:5500 ";
-//axisos.get('${host}/gbook').then( )
-//const a = `hello`
 
 function showDetails(activityId) {
   const detail = details[activityId];
@@ -97,6 +94,7 @@ function a() {
   f.writer.value = "";
   f.pwd.value = "";
   f.content.value = "";
+  addEntryToServer(writer, content, currentTime);
 }
 
 function mkDiv(writer, pwd, content, time) {
@@ -155,47 +153,67 @@ function del(cnt) {
   let delDiv = document.getElementById("d_" + cnt);
   if (pwd == delDiv.pwd) {
     document.getElementById("list").removeChild(delDiv);
+    deleteEntryFromServer(delDiv);
   } else {
     alert("글 비밀번호 불일치. 삭제취소");
   }
 }
 
-function addEntry() {
-  const writer = document.getElementById("writer").value;
-  const content = document.getElementById("content").value;
-
-  const formData = new FormData();
-  formData.append('writer', writer);
-  formData.append('content', content);
-
+function addEntryToServer(writer, content, time) {
   fetch('/add_entry', {
     method: 'POST',
-    body: formData
-  }).then(response => {
-    if (response.ok) {
-      location.reload();
-    } else {
-      alert('Failed to add entry');
-    }
-  });
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: new URLSearchParams({
+      'writer': writer,
+      'content': content,
+      'time': time,
+    }),
+  })
+    .then(response => response.json())
+    .then(data => {
+      if (data.message !== 'Entry added successfully') {
+        alert('Failed to add entry to server');
+      }
+    })
+    .catch(error => console.error('Error adding entry to server:', error));
 }
 
-/*
-function deleteEntry(writer, content, time) {
-  const formData = new FormData();
-  formData.append('writer', writer);
-  formData.append('content', content);
-  formData.append('time', time);
-
+function deleteEntryFromServer(entry) {
   fetch('/delete_entry', {
     method: 'POST',
-    body: formData
-  }).then(response => {
-    if (response.ok) {
-      location.reload();
-    } else {
-      alert('Failed to delete entry');
-    }
-  });
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: new URLSearchParams({
+      'writer': entry.querySelector("#w_" + entry.id.split("_")[1]).innerText,
+      'content': entry.querySelector("#c_" + entry.id.split("_")[1]).innerText,
+      'time': entry.querySelector("#t_" + entry.id.split("_")[1]).innerText,
+    }),
+  })
+    .then(response => response.json())
+    .then(data => {
+      if (data.message !== 'Entry deleted successfully') {
+        alert('Failed to delete entry from server');
+      }
+    })
+    .catch(error => console.error('Error deleting entry from server:', error));
 }
-*/
+
+document.addEventListener("DOMContentLoaded", function () {
+  fetchEntries();
+});
+
+function fetchEntries() {
+  fetch('/entries')
+    .then(response => response.json())
+    .then(data => {
+      const list = document.getElementById("list");
+      data.forEach(entry => {
+        const el = mkDiv(entry.writer, "", entry.content, entry.time);
+        list.appendChild(el);
+      });
+    })
+    .catch(error => console.error('Error fetching guestbook entries:', error));
+}
