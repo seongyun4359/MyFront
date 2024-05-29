@@ -82,6 +82,7 @@ function showDetails(activityId) {
 }
 
 // 방명록 기능 구현
+/*
 let cnt = 1;
 function a() {
   let writer = f.writer.value;
@@ -217,3 +218,131 @@ function fetchEntries() {
     })
     .catch(error => console.error('Error fetching guestbook entries:', error));
 }
+
+*/
+
+const host = "http://127.0.0.1:8008";
+
+const listContainer = document.getElementById('list');
+const guestForm = document.forms['f'];
+const editForm = document.getElementById('editf');
+
+// 방명록 목록 가져오기
+function getGuestEntries() {
+  axios.get(`${host}/guestbook`)
+    .then(response => {
+      renderGuestEntries(response.data);
+    })
+    .catch(error => {
+      console.error('방명록 항목을 가져오는 중 오류 발생:', error);
+    });
+}
+
+// 방명록 목록 렌더링
+function renderGuestEntries(entries) {
+  listContainer.innerHTML = '';
+  entries.forEach(entry => {
+    const entryDiv = document.createElement('div');
+    entryDiv.classList.add('entry-item');
+    entryDiv.textContent = `작성자: ${entry.writer}, 내용: ${entry.content}`;
+    listContainer.appendChild(entryDiv);
+
+    // 수정 버튼 생성 및 이벤트 처리
+    const editBtn = document.createElement('button');
+    editBtn.classList.add('edit-btn');
+    editBtn.textContent = '수정';
+    editBtn.addEventListener('click', function () {
+      showEditForm(entry);
+    });
+
+    // 삭제 버튼 생성 및 이벤트 처리
+    const deleteBtn = document.createElement('button');
+    deleteBtn.classList.add('delete-btn');
+    deleteBtn.textContent = 'x';
+    deleteBtn.addEventListener('click', function () {
+      deleteGuestEntry(entry.id);
+    });
+
+    // entryDiv에 수정 및 삭제 버튼 추가
+    entryDiv.appendChild(editBtn);
+    entryDiv.appendChild(deleteBtn);
+  });
+}
+
+window.addEventListener('DOMContentLoaded', function () {
+  getGuestEntries();
+});
+
+// 방명록 항목 추가
+guestForm.addEventListener('submit', function (event) {
+  event.preventDefault();
+  addGuestEntry();
+});
+
+function addGuestEntry() {
+  const writer = document.getElementById('writer').value.trim();
+  const pwd = document.getElementById('pwd').value.trim();
+  const content = document.getElementById('content').value.trim();
+  let guestData = {
+    writer: writer,
+    pwd: pwd,
+    content: content
+  };
+  if (writer === '' || pwd === '' || content === '') return;
+  axios.post(`${host}/guestbook`, guestData)
+    .then(response => {
+      guestForm.reset();
+      getGuestEntries();
+    })
+    .catch(error => {
+      console.error('방명록 항목을 추가하는 중 오류 발생:', error);
+    });
+}
+
+// 방명록 항목 삭제
+function deleteGuestEntry(id) {
+  axios.delete(`${host}/guestbook/${id}`).then(response => {
+    getGuestEntries();
+  }).catch(error => {
+    console.error('방명록 항목을 삭제하는 중 오류 발생:', error);
+  });
+}
+
+// 방명록 항목 수정 폼 보여주기
+function showEditForm(entry) {
+  editForm.style.display = 'block';
+  document.getElementById('editwriter').value = entry.writer;
+  document.getElementById('editpwd').value = entry.pwd;
+  document.getElementById('editcontent').value = entry.content;
+  editForm.dataset.id = entry.id;
+}
+
+// 방명록 항목 수정 완료
+document.getElementById('editbtn').addEventListener('click', function () {
+  const id = editForm.dataset.id;
+  const writer = document.getElementById('editwriter').value.trim();
+  const pwd = document.getElementById('editpwd').value.trim();
+  const content = document.getElementById('editcontent').value.trim();
+  let guestData = {
+    writer: writer,
+    pwd: pwd,
+    content: content
+  };
+  if (writer === '' || pwd === '' || content === '') return;
+  axios.put(`${host}/guestbook/${id}`, guestData)
+    .then(response => {
+      editForm.style.display = 'none';
+      getGuestEntries();
+    })
+    .catch(error => {
+      console.error('방명록 항목을 수정하는 중 오류 발생:', error);
+    });
+});
+
+// 방명록 항목 수정 취소
+function cancelEdit() {
+  editForm.style.display = 'none';
+  editForm.reset();
+}
+
+document.getElementById('editbtn-cancel').addEventListener('click', cancelEdit);
